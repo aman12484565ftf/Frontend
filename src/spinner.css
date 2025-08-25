@@ -1,0 +1,36 @@
+/* spinner.css */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh; /* Adjust based on your layout */
+}
+
+.loader {
+  width: 80px;
+  height: 80px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #4f46e5; /* Indigo color */
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+  box-shadow: 0 0 15px rgba(79, 70, 229, 0.5); /* Glow effect */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loader-text {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #4f46e5;
+  animation: fade 1.5s infinite;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
