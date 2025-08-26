@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import CDN_URL  from "../utils/constants";
+import UserContext from "../utils/userContext";
 
 const RestaurantCard = (props) => {
   const { resData } = props;
+  const {loggedInUser}=useContext(UserContext)
 
   // Safely destructure with fallback
   const {
@@ -26,6 +29,7 @@ const RestaurantCard = (props) => {
       <h3>{avgRating} ⭐ stars</h3>
       <p> {costForTwo}</p>
       <h3>{sla?.deliveryTime ? `${sla.deliveryTime} mins` : "Delivery time unavailable"}</h3>
+      <h4>User:{loggedInUser}</h4>
     </div>
   );
 };

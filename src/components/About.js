@@ -1,3 +1,4 @@
+import UserContext from "../utils/userContext.js";
 import User from "./User.js";
 import UserClass from "./UserClass.js";
 import React from "react";
@@ -21,9 +22,17 @@ class About extends React.Component{
 
    }
    render(){
+      //aceesingnhook in class based
+
       return (
        <div>
                <h1>About Class Component</h1>
+               <div>
+                  <UserContext.Consumer>
+                     {/* //it takes a cb function in class bases and this give acceess to context */}
+               {({loggedInUser})=><h1 className="text-xl font-bold">{loggedInUser}</h1>}
+                  </UserContext.Consumer>
+               </div>
        <h2>This is About ! Thanks for Visit </h2>
        {/* <User/> */}
          <UserClass name={"Amber class based1"}/>

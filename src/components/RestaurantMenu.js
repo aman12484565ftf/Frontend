@@ -8,7 +8,7 @@ import { useState } from "react";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   // const [resInfo, setResInfo] = useState(null);
-
+  const dummy ="Dummy Data";
   const  resInfo=useRestaurantMenu(resId); 
 
   const[showIndex,setShowIndex]=useState(null);
@@ -61,9 +61,12 @@ c.card?.["card"]?.["@type"]===
     /***************//////////////////////before each of restaurant categopry controlling itself to show or not now its parent will
     showItems={index==showIndex ?true :false}
     // 👈 parent decides which one is open
-    setShowIndex={()=>setShowIndex(index)}
+    // setShowIndex={()=>setShowIndex(index)}
+    setShowIndex={()=>
+      setShowIndex(index==showIndex?null:index)
+    }
     // parent gives child a way to change parent’s state 
-
+  dummy={dummy}
     
     />
   ))}

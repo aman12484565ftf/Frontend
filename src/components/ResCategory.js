@@ -1,6 +1,6 @@
 import ItemList from "./ItemList";
 import {useState} from "react";
-const RestaurantCategory=({data,showItems,setShowIndex})=>{
+const RestaurantCategory=({data,showItems,setShowIndex,dummy})=>{
 
     //Responsible for show and hide item list mainly 
 
@@ -25,7 +25,7 @@ const RestaurantCategory=({data,showItems,setShowIndex})=>{
      </div>
 
      {/* // this below is ui layer(jsx mainly) now i have to sync with data(state and variables all ) layer so i will have a state variable and it will decide shown or not  */}
-        {showItems && <ItemList  items={items}/>}
+        {showItems && <ItemList  items={items} dummy={dummy}/>}
      </div>
     {/* Accordian Body  -itemList*/}
 

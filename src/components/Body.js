@@ -1,8 +1,9 @@
 import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
-import { useState,useEffect } from "react";
+import { useState,useEffect,useContext} from "react";
 import Shimmer from "./Shimmer"
 import { Link } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 const Body=()=>{
      let listOfRestaurant2=[
         { 
@@ -73,6 +74,12 @@ const Body=()=>{
     )
   }
 
+
+                 //using context to change name from search box 
+const{loggedInUser,setUserName}=useContext(UserContext);
+
+
+
   return listOfRestaurants.length===0 ?<Shimmer/> :(
     <div className="body">
 
@@ -113,6 +120,11 @@ value={searchText}
                 </button>
 </div>
 
+<div className="search m-4 p-4 flex items-center" >
+  {/* //input box for changing context  */}
+  <label>UserName:</label>
+<input className="border border-black p-2" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)} />
+</div>
       </div>
 
     
@@ -121,6 +133,7 @@ value={searchText}
  {filteredRestaurant.map((restaurant) => {
   const id =  restaurant?.info?.id;
   //  const avgRating = restaurant?.info?.avgRating;
+
   return (
     <Link key={id} to={"/restaurants/" + id}>
 
