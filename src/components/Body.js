@@ -54,14 +54,14 @@ const Body=()=>{
 
   const fetchData=async()=>{
     const data=await fetch(
-     "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" 
+    //  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING" 
   
 
     //  below is old api call which is invalid now dont use 
     //  "https://www.swiggy.com/dapi/restaurants/list/v5?lat=13.198909&lng=77.7068926&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"  
  
  //run below one if hosted on netlify so your api of restaurants is visible to user 
-    // "/.netlify/functions/swiggy"
+    "/.netlify/functions/swiggy"
   );
     const json=await data.json();
      console.log("Swiggy Data:", data);
