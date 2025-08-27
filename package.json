@@ -20,12 +20,13 @@
   "homepage": "https://github.com/aman12484565ftf/Frontend#readme",
   "devDependencies": {
     "@parcel/transformer-react-refresh-wrap": "^2.15.4",
+    "@tailwindcss/postcss": "^4.1.12",
     "parcel": "^2.15.4",
+    "postcss": "^8.5.6",
     "process": "^0.11.10"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.8.2",
-    "@tailwindcss/postcss": "^4.1.12",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-redux": "^9.2.0",
