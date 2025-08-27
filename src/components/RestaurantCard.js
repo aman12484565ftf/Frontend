@@ -17,7 +17,7 @@ const RestaurantCard = (props) => {
   } = resData?.info || {};
 
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-50 hover:bg-gray-200" >
+    <div className="m-4 p-4 w-[220px] rounded-lg bg-gray-50 hover:bg-gray-200" >
     {/* // style={{ backgroundColor: "#f0f0f0" }}> */}
       <img
         className="rounded-lg"

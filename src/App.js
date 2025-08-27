@@ -12,7 +12,11 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import UserContext from "./utils/UserContext";
 import UserContext from "./utils/userContext"; 
 
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+//now we have to provide store to our react application so bridge between react app and redux 
 
+import Cart from "./components/Cart"
 
 //lazy loading here :
 const Grocery=lazy(()=>import ("./components/Grocery")); 
@@ -38,6 +42,7 @@ const AppLayout=()=>{
     //Default
     //modify context value provided can be used anywhere in app (override the default value)
     //we created a local state variable bind 
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser :userName ,setUserName}}>
 
     <div className="app">
@@ -46,7 +51,8 @@ const AppLayout=()=>{
     </div>
 
     </UserContext.Provider>
-  )
+</Provider>
+  );
 };
 
 // With concise body (no return, no {}):
@@ -88,6 +94,10 @@ element:<Suspense fallback={<h1>Loading Screen!</h1>}><Grocery/></Suspense>
     path:"/restaurants/:resId",
     element:<RestaurantMenu/> 
   },
+  {
+    path:"/cart",
+    element:<Cart/>
+  }
 
     ],
     errorElement:<Error/>

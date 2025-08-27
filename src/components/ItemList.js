@@ -33,12 +33,35 @@
 
 // }
 // export default ItemList;
-
+// using useDispatch hook for updating card when click on add+
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 import CDN_URL from "../utils/constants";
 
-const ItemList = ({ items,dummy}) => {
+const ItemList = ({ items}) => {
 //   console.log(items)
 // console.log(dummy);
+
+
+//Whenever im clicking on Add+ button a action is dispatched which calls a reducer function in cartSlice.js which updates the slice of the store
+// because my header is subscribed to the store using a selector everything is working 
+
+
+
+
+// adding item in store 
+const dispatch=useDispatch();
+const handleAddItem=(item)=>{
+  //Dispatch an action
+  //redux will take data create an object our of it take obj and pass as second argument in addItem
+  // {
+  // payload:data;
+
+  // }
+
+  //action is dispatched 
+  dispatch(addItem(item));
+} 
 
   return (
     <div>
@@ -70,7 +93,8 @@ const ItemList = ({ items,dummy}) => {
               alt={item?.card?.info?.name}
               className="w-full h-full object-cover rounded-lg shadow"
             />
-            <button className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-semibold text-sm px-3 py-1 rounded-md shadow-md">
+            <button className="absolute bottom-1 left-1/2 -translate-x-1/2 bg-white text-green-600 font-semibold text-sm px-3 py-1 rounded-md shadow-md"
+            onClick={()=>handleAddItem(item)}>
               ADD+
             </button>
           </div>

@@ -21,3 +21,16 @@ Zero Config
 You don’t need to manually set up Webpack or Babel — Parcel figures it out automatically.
 
 
+# 2 types Routing in web apps
+- Client Side Routing
+-Server Side Routing 
+
+
+# Redux-Toolkit
+- Install (name of lib)@reduxjs/toolkit and react-redux
+- Build our Store
+- Connect store to our app
+- Slice(cart slice)
+- dispatch(action)
+- Selector 
+
