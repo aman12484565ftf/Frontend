@@ -137,7 +137,7 @@ value={searchText}
   return (
     <Link key={id} to={"/restaurants/" + id}>
 
-        {restaurant.info.avgRating>4.5?(
+        {restaurant.info.avgRating>4.3?(
           <RestaurantCardPromoted resData={restaurant}/>):
           (
              <RestaurantCard resData={restaurant} />
