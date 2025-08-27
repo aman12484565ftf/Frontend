@@ -2,8 +2,6 @@
 /dist
 .parcel-cache
 .env
-.postcssrc
-.parcelrc
 *.heapsnapshot
 1.json
 1.txt
