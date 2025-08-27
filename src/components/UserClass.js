@@ -15,12 +15,13 @@ class UserClass extends React.Component{
     }
 
     async componentDidMount(){
-const data= await fetch(process.env.REACT_APP_GITHUB_API,{
-    headers:{
-    Authorization:`Bearer ${process.env.REACT_APP_GITHUB_TOKEN }`,
+// const data= await fetch(process.env.REACT_APP_GITHUB_API,{
+//     // headers:{
+//     // Authorization:`Bearer ${process.env.REACT_APP_GITHUB_TOKEN }`,
 
-        },
-});
+//     //     },
+// });
+const data=await fetch("https://api.github.com/users/aman12484565ftf");
 const json=await data.json();
 this.setState(
     {
@@ -65,7 +66,7 @@ const {name,bio,location,avatar_url}=this.state.userInfo;
       return( 
         <div className="user-card">
             <img src={avatar_url}/>
-            <h2>{bio}</h2>
+            <h2>Bio:{bio}</h2>
             <h2>Name:{name}</h2>
         <h3>Location:{location}</h3>
         <h4>Contact :aman1@gmail.com</h4>
